@@ -22,14 +22,14 @@ const Home = () => {
         <>
           <div className="flex justify-between items-center">
             <h1 className="ml-[20rem]  text-[3rem] ">
-              Special Products
+              Common Products
             </h1>
 
             <Link
               to="/shop"
               className="bg-pink-600 font-bold rounded-full py-2 px-10 mr-[18rem] "
             >
-              Shop
+              Shop Now!
             </Link>
           </div>
 

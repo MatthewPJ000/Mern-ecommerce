@@ -4,19 +4,19 @@ import React, { useState } from 'react';
 import './component.css'
 
 const SmallProduct = ({ product }) => {
-  const [reviewCount, setReviewCount] = useState(0);
 
-  const addReview = () => {
-    setReviewCount(reviewCount + 1);
-  }
-
-  const updateReviewStars = ()=> {
-    return Array.from({ length: 5}).map((_, index)=>(
-      <span key={index} className={`star ${index <Math.round(reviewCount) ? 'active':''}`}>
+  const reviewCount = product.numReviews;
+  const updateReviewStars = () => {
+    return Array.from({ length: 5 }).map((_, index) => (
+      <span
+        key={index}
+        className={`star ${index < Math.round(reviewCount) ? 'active' : ''}`}
+        style={{ color: index < Math.round(reviewCount) ? 'yellow' : '#ccc' }}
+      >
         &#9733;
       </span>
-    ))
-  }
+    ));
+  };
 
   
 
@@ -50,8 +50,8 @@ const SmallProduct = ({ product }) => {
       <div id="review-section">
   
         <div id="review-stars">{updateReviewStars()}</div>
-        <p id="review-count">{reviewCount} reviews</p>
-        <button onClick={addReview}>Add Review</button>
+        {/* <p id="review-count">{reviewCount} reviews</p>
+        <button onClick={addReview}>Add Review</button> */}
       </div>
 
       <div className="p-4">
